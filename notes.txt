@@ -1,0 +1,11 @@
+# Need to install google cloud SDK and python libraries:
+# Apache Beam doesn't support some Python 3 syntactic constructs as of 2019-09
+pip3 install apache-beam[gcp]
+# Installing the below gives the following error message: "google-cloud-bigtable 0.32.2 has requirement grpc-google-iam-v1<0.12dev,>=0.11.4, but you'll have grpc-google-iam-v1 0.12.3 which is incompatible."
+pip3 install --upgrade google-cloud-pubsub
+pip3 install --upgrade google-cloud-bigquery
+
+# Need to create a service account within your project with Owner privileges and add as an environment variable like so:
+export GOOGLE_APPLICATION_CREDENTIALS="/Users/jeffbruce/Development/twitter_gcp/key.json"
+
+# Need to enable all the requisite APIs on GCP
